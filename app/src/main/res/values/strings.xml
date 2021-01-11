@@ -3,4 +3,6 @@
     <string name="home_feed_button">Feed</string>
     <string name="home_pokemon_list_button">Pokemon List</string>
     <string name="home_pokemon_button">Setting</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_ok">Ok</string>
 </resources>
