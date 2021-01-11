@@ -1,10 +1,9 @@
-package com.wachi.ohmypokemon.ui.pokemonlist
+package com.wachi.ohmypokemon.ui.home.pokemonlist
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.wachi.ohmypokemon.R
 import com.wachi.ohmypokemon.core.BaseFragment
 

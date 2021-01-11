@@ -1,4 +1,4 @@
-package com.wachi.ohmypokemon.ui.pokemonlist
+package com.wachi.ohmypokemon.ui.home.pokemonlist
 
 import com.wachi.ohmypokemon.core.BaseViewModel
 

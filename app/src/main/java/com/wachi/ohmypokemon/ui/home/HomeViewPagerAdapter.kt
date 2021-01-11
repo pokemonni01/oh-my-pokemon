@@ -3,7 +3,7 @@ package com.wachi.ohmypokemon.ui.home
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.wachi.ohmypokemon.ui.pokemonlist.PokemonListFragment
+import com.wachi.ohmypokemon.ui.home.pokemonlist.PokemonListFragment
 
 private const val PAGE_COUNT = 1
 
