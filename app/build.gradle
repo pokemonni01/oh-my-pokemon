@@ -19,9 +19,11 @@ android {
     buildTypes {
         debug {
             buildConfigField("String", "BASE_URL", '"https://www.google.com/"')
+            buildConfigField("String", "POKEMON_RSS_NEWS_URL", '"https://www.pokemon.com/us/pokemon-news/rss"')
         }
         release {
             buildConfigField("String", "BASE_URL", '"https://www.google.com/"')
+            buildConfigField("String", "POKEMON_RSS_NEWS_URL", '"https://www.pokemon.com/us/pokemon-news/rss"')
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -41,8 +43,13 @@ dependencies {
     // Android
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines_android"
     implementation "androidx.viewpager2:viewpager2:$versions.viewpager2"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.viewmodel_ktx"
 
     // Koin
     implementation "org.koin:koin-core:$versions.koin"
     implementation "org.koin:koin-android:$versions.koin"
+    implementation "org.koin:koin-android-viewmodel:$versions.koin"
+
+    // RSS
+    implementation "com.prof.rssparser:rssparser:$versions.rssparser"
 }
