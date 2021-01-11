@@ -2,6 +2,7 @@ package com.wachi.ohmypokemon
 
 import android.app.Application
 import com.wachi.ohmypokemon.di.coreModule
+import com.wachi.ohmypokemon.di.homeModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -16,7 +17,8 @@ class MyApplication: Application() {
         startKoin {
             androidContext(this@MyApplication)
             val modules = arrayListOf(
-                coreModule
+                coreModule,
+                homeModule
             )
             modules(modules)
         }
