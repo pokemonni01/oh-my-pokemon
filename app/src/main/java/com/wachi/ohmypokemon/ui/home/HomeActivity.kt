@@ -11,5 +11,7 @@ class HomeActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         viewPagerHome.adapter = HomeViewPagerAdapter(this)
+        btnFeed.setOnClickListener { viewPagerHome.currentItem = POKEMON_NEWS_FEED_PAGE_INDEX }
+        btnPokemonList.setOnClickListener { viewPagerHome.currentItem = POKEMON_LIST_PAGE_INDEX }
     }
 }
