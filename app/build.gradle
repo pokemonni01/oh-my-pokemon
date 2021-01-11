@@ -38,4 +38,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines_android"
     implementation "androidx.viewpager2:viewpager2:$versions.viewpager2"
 
+    // Koin
+    implementation "org.koin:koin-core:$versions.koin"
+    implementation "org.koin:koin-android:$versions.koin"
 }
