@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import com.wachi.ohmypokemon.R
 import com.wachi.ohmypokemon.core.BaseFragment
 
-
 class PokemonListFragment : BaseFragment() {
 
 
