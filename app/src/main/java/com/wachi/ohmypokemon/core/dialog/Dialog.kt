@@ -40,6 +40,7 @@ class DialogImpl(
             setTitle(title)
             setMessage(message)
             setPositiveButtonText(positiveButtonText)
+            show()
         }
     }
 
@@ -62,6 +63,7 @@ class DialogImpl(
             } else {
                 hideNegativeButton()
             }
+            show()
         }
     }
 
