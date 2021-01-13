@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 30
@@ -52,4 +53,11 @@ dependencies {
 
     // RSS
     implementation "com.prof.rssparser:rssparser:$versions.rssparser"
+
+    // Material
+    implementation "com.google.android.material:material:$versions.material_design"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$versions.glide"
+    kapt "com.github.bumptech.glide:compiler:$versions.glide"
 }
