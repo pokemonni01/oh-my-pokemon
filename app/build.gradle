@@ -70,7 +70,6 @@ dependencies {
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
-    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:$versions.retrofit_coroutines"
 
     // Chuck Interceptor
     implementation "com.readystatesoftware.chuck:library:$versions.chuck"

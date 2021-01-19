@@ -13,7 +13,6 @@ buildscript {
             okhttp                  :       '4.9.0',
             okhttp_log_interceptor  :       '4.9.0',
             retrofit                :       '2.9.0',
-            retrofit_coroutines     :       '1.0.0',
             rssparser               :       '3.1.2'
     ]
     repositories {
