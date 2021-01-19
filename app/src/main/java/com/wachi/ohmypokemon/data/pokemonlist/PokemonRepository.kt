@@ -30,12 +30,14 @@ class PokemonRepositoryImpl(
     }
 
     private fun PokemonListResponseModel.mapToDomain(): PokemonList {
+        val pattern = "\\/([0-9]+)\\/"
+        val regex = Regex(pattern)
         return PokemonList(
             pokemon = this.results.map {
-                val pokemonId = "1"
+                val pokemonId = regex.find(it.url)?.groups?.get(1)?.value ?: ""
                 Pokemon(
                     id = pokemonId,
-                    name = it.name,
+                    name = it.name.capitalize(),
                     image = configRepository.getPokemonImageUrl(pokemonId)
                 )
             }
