@@ -19,12 +19,14 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String", "BASE_URL", '"https://www.google.com/"')
+            buildConfigField("String", "BASE_URL", '"https://pokeapi.co/api/v2/"')
             buildConfigField("String", "POKEMON_RSS_NEWS_URL", '"https://www.pokemon.com/us/pokemon-news/rss"')
+            buildConfigField("String", "POKEMON_IMAGE_URL", '"https://pokeres.bastionbot.org/images/pokemon/"')
         }
         release {
-            buildConfigField("String", "BASE_URL", '"https://www.google.com/"')
+            buildConfigField("String", "BASE_URL", '"https://pokeapi.co/api/v2/"')
             buildConfigField("String", "POKEMON_RSS_NEWS_URL", '"https://www.pokemon.com/us/pokemon-news/rss"')
+            buildConfigField("String", "POKEMON_IMAGE_URL", '"https://pokeres.bastionbot.org/images/pokemon/"')
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -60,4 +62,19 @@ dependencies {
     // Glide
     implementation "com.github.bumptech.glide:glide:$versions.glide"
     kapt "com.github.bumptech.glide:compiler:$versions.glide"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:okhttp:$versions.okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:$versions.retrofit_coroutines"
+
+    // Chuck Interceptor
+    implementation "com.readystatesoftware.chuck:library:$versions.chuck"
+
+    // Gson
+    implementation "com.google.code.gson:gson:$versions.gson"
 }
