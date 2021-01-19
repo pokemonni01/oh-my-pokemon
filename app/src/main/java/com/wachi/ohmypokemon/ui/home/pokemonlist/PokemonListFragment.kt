@@ -36,6 +36,7 @@ class PokemonListFragment : BaseFragment() {
     }
 
     private fun observe() {
+        viewModel.observeLoading()
         viewModel.pokemonList.observe(viewLifecycleOwner, {
             recyclerViewAdapter.onUpdateItem(ArrayList(it))
         })

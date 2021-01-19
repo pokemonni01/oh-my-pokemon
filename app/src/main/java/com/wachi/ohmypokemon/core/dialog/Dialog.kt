@@ -5,6 +5,13 @@ import androidx.annotation.StringRes
 import com.wachi.ohmypokemon.R
 
 interface Dialog {
+
+    fun loading(isShow: Boolean)
+
+    fun showLoading()
+
+    fun hideLoading()
+
     fun show(
         title: String,
         message: String,
@@ -22,13 +29,37 @@ interface Dialog {
     )
 
     fun dismiss()
+
+
 }
 
 class DialogImpl(
     private val activity: Activity
 ): Dialog {
 
+    private val loadingView by lazy { LoadingView(activity) }
     private var dialog: CustomAlertDialog? = null
+
+    override fun showLoading() {
+        activity.runOnUiThread {
+            if (!loadingView.isLoading()) {
+                loadingView.show()
+            }
+        }
+    }
+
+    override fun hideLoading() {
+        activity.runOnUiThread {
+            if (loadingView.isLoading()) {
+                loadingView.dismiss()
+            }
+        }
+    }
+
+    override fun loading(isShow: Boolean) {
+        if (isShow) showLoading()
+        else hideLoading()
+    }
 
     override fun show(
         title: String,

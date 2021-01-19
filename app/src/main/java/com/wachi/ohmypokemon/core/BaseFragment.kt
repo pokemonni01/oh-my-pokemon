@@ -7,5 +7,12 @@ import org.koin.core.parameter.parametersOf
 
 open class BaseFragment: Fragment() {
 
-    protected val dialog: Dialog by inject { parametersOf(this) }
+    protected val dialog: Dialog by inject { parametersOf(requireActivity()) }
+
+    protected fun <V : BaseViewModel> V.observeLoading() =
+        apply {
+            loading.observe(this@BaseFragment, {
+                dialog.loading(it)
+            })
+        }
 }

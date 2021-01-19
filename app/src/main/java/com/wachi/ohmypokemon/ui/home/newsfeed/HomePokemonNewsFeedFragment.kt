@@ -37,6 +37,7 @@ class HomePokemonNewsFeedFragment : BaseFragment() {
     }
 
     private fun observe() {
+        viewModel.observeLoading()
         viewModel.rssFeedList.observe(viewLifecycleOwner, {
             recyclerViewAdapter.onUpdateItem(ArrayList(it))
         })
