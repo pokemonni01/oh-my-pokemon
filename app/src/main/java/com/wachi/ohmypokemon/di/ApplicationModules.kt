@@ -2,7 +2,6 @@ package com.wachi.ohmypokemon.di
 
 import android.app.Activity
 import com.google.gson.GsonBuilder
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.experimental.CoroutineCallAdapterFactory
 import com.prof.rssparser.Parser
 import com.readystatesoftware.chuck.ChuckInterceptor
 import com.wachi.ohmypokemon.BuildConfig
@@ -56,7 +55,6 @@ val coreModule = module {
             .client(get())
             .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
     }
     factory<Dialog> { (activity: Activity) -> DialogImpl(activity) }
@@ -77,7 +75,7 @@ val repositoryModule = module {
 
 val useCaseModule = module {
     factory { GetRSSFeedUseCase(get()) }
-    factory { GetPokemonListUseCase() }
+    factory { GetPokemonListUseCase(get()) }
 }
 
 val homeModule = module {
