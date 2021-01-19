@@ -15,15 +15,3 @@ data class Result(
     @SerializedName("name") val name: String,
     @SerializedName("url") val url: String,
 )
-
-fun PokemonListResponseModel.mapToDomain(): PokemonList {
-    return PokemonList(
-        pokemon = this.results.map {
-            Pokemon(
-                id = "1",
-                name = it.name,
-                image = ""
-            )
-        }
-    )
-}

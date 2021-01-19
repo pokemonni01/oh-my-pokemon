@@ -2,6 +2,7 @@ package com.wachi.ohmypokemon.data.pokemonlist
 
 import com.wachi.ohmypokemon.core.BaseService
 import com.wachi.ohmypokemon.data.ConfigRepository
+import com.wachi.ohmypokemon.domain.pokemonlist.Pokemon
 import com.wachi.ohmypokemon.domain.pokemonlist.PokemonList
 import com.wachi.ohmypokemon.domain.pokemonlist.PokemonListBody
 import kotlinx.coroutines.flow.Flow
@@ -26,5 +27,18 @@ class PokemonRepositoryImpl(
             }
 
         }.execute()
+    }
+
+    private fun PokemonListResponseModel.mapToDomain(): PokemonList {
+        return PokemonList(
+            pokemon = this.results.map {
+                val pokemonId = "1"
+                Pokemon(
+                    id = pokemonId,
+                    name = it.name,
+                    image = configRepository.getPokemonImageUrl(pokemonId)
+                )
+            }
+        )
     }
 }
