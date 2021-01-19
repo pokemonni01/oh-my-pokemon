@@ -7,6 +7,8 @@ interface ConfigRepository {
     fun getBaseUrl(): String
 
     fun getRssFeedUrl(): String
+
+    fun getPokemonImageUrl(pokemonId: String): String
 }
 
 class ConfigRepositoryImpl: ConfigRepository {
@@ -18,4 +20,7 @@ class ConfigRepositoryImpl: ConfigRepository {
         return BuildConfig.POKEMON_RSS_NEWS_URL
     }
 
+    override fun getPokemonImageUrl(pokemonId: String): String {
+        return BuildConfig.POKEMON_IMAGE_URL.plus("$pokemonId.png")
+    }
 }
