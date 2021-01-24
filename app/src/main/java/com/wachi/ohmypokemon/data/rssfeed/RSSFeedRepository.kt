@@ -22,7 +22,8 @@ class RSSFeedRepositoryImpl(
             author = it.author,
             content = it.content,
             title = it.title,
-            description = it.description
+            description = it.description,
+            link = it.link
         ) }
     }
 }

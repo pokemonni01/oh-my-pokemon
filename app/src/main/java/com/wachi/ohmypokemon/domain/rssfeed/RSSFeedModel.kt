@@ -6,5 +6,6 @@ data class RSSFeedModel(
     val author: String?,
     val title: String?,
     val content: String?,
-    val description: String?
+    val description: String?,
+    val link: String?
 )
