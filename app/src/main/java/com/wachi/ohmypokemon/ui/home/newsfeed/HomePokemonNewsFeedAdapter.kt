@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.wachi.ohmypokemon.R
 import com.wachi.ohmypokemon.domain.rssfeed.RSSFeedModel
+import com.wachi.ohmypokemon.utils.setTextViewInHtml
 import kotlinx.android.synthetic.main.item_pokemon_news_feed.view.*
 
 class HomePokemonNewsFeedAdapter(
@@ -48,7 +49,7 @@ class HomePokemonNewsFeedItemViewHolder(private val view: View) : RecyclerView.V
             .into(view.ivNewsImage)
         view.tvNewsDate.text = item.pubDate
         view.tvNewsAuthor.text = item.author
-        view.tvNewsTitle.text = item.title
-        view.tvNewsMessage.text = item.description
+        view.tvNewsTitle.setTextViewInHtml(item.title ?: "")
+        view.tvNewsMessage.setTextViewInHtml(item.description ?: "")
     }
 }
