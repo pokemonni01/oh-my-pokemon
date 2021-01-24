@@ -17,8 +17,10 @@ class HomePokemonNewsFeedFragment : BaseFragment() {
     private val viewModel: HomePokemonNewsFeedViewModel by viewModel()
 
     private val recyclerViewAdapter: HomePokemonNewsFeedAdapter =
-        HomePokemonNewsFeedAdapter(arrayListOf()) {
-//            viewModel.handleItemClick(it)
+        HomePokemonNewsFeedAdapter(arrayListOf()) { rssFeed ->
+            if (rssFeed.link?.isNotEmpty() == true) {
+                openExternalBrowser(rssFeed.link)
+            }
         }
 
     override fun onCreateView(
