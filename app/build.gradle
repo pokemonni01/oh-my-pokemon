@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 30
@@ -17,7 +18,15 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", '"https://pokeapi.co/api/v2/"')
+            buildConfigField("String", "POKEMON_RSS_NEWS_URL", '"https://www.pokemon.com/us/pokemon-news/rss"')
+            buildConfigField("String", "POKEMON_IMAGE_URL", '"https://pokeres.bastionbot.org/images/pokemon/"')
+        }
         release {
+            buildConfigField("String", "BASE_URL", '"https://pokeapi.co/api/v2/"')
+            buildConfigField("String", "POKEMON_RSS_NEWS_URL", '"https://www.pokemon.com/us/pokemon-news/rss"')
+            buildConfigField("String", "POKEMON_IMAGE_URL", '"https://pokeres.bastionbot.org/images/pokemon/"')
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -34,7 +43,37 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    // Coroutine
+    // Android
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines_android"
+    implementation "androidx.viewpager2:viewpager2:$versions.viewpager2"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.viewmodel_ktx"
 
+    // Koin
+    implementation "org.koin:koin-core:$versions.koin"
+    implementation "org.koin:koin-android:$versions.koin"
+    implementation "org.koin:koin-android-viewmodel:$versions.koin"
+
+    // RSS
+    implementation "com.prof.rssparser:rssparser:$versions.rssparser"
+
+    // Material
+    implementation "com.google.android.material:material:$versions.material_design"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$versions.glide"
+    kapt "com.github.bumptech.glide:compiler:$versions.glide"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:okhttp:$versions.okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+
+    // Chuck Interceptor
+    implementation "com.readystatesoftware.chuck:library:$versions.chuck"
+
+    // Gson
+    implementation "com.google.code.gson:gson:$versions.gson"
 }
