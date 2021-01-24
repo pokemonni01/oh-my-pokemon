@@ -1,8 +1,6 @@
-package com.wachi.ohmypokemon.data.pokemonlist
+package com.wachi.ohmypokemon.data.pokemon.list
 
 import com.google.gson.annotations.SerializedName
-import com.wachi.ohmypokemon.domain.pokemonlist.Pokemon
-import com.wachi.ohmypokemon.domain.pokemonlist.PokemonList
 
 data class PokemonListResponseModel(
     @SerializedName("count") val count: Long,

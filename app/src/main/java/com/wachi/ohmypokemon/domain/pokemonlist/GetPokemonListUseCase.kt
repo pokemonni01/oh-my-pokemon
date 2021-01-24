@@ -1,7 +1,7 @@
 package com.wachi.ohmypokemon.domain.pokemonlist
 
 import com.wachi.ohmypokemon.core.UseCase
-import com.wachi.ohmypokemon.data.pokemonlist.PokemonRepository
+import com.wachi.ohmypokemon.data.pokemon.PokemonRepository
 import kotlinx.coroutines.flow.Flow
 
 class GetPokemonListUseCase(

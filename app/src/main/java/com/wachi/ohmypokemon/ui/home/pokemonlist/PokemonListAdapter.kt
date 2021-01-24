@@ -25,6 +25,11 @@ class PokemonListAdapter(
     override fun onBindViewHolder(holder: PokemonListViewHolder, position: Int) {
         val item = pokemonList[position]
         holder.setViewData(item)
+        item?.let { pokemon ->
+            holder.itemView.setOnClickListener {
+                onItemSelect(pokemon)
+            }
+        }
     }
 
     override fun getItemCount() = pokemonList.size

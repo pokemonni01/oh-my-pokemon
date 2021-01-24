@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wachi.ohmypokemon.R
 import com.wachi.ohmypokemon.core.BaseFragment
+import com.wachi.ohmypokemon.ui.pokemondetail.PokemonDetailActivity
+import com.wachi.ohmypokemon.ui.pokemondetail.PokemonDetailInfo
 import kotlinx.android.synthetic.main.fragment_pokemon_list.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -17,8 +19,10 @@ class PokemonListFragment : BaseFragment() {
     private val viewModel: PokemonListViewModel by viewModel()
 
     private val recyclerViewAdapter: PokemonListAdapter =
-        PokemonListAdapter(arrayListOf()) {
-//            viewModel.handleItemClick(it)
+        PokemonListAdapter(arrayListOf()) { pokemon ->
+            activity?.let {
+                PokemonDetailActivity.newInstance(it, PokemonDetailInfo(pokemon.id))
+            }
         }
 
     override fun onCreateView(

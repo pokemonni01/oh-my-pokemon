@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pokemon_detail_navigation"
+    app:startDestination="@id/pokemonDetailFragment">
+
+    <fragment
+        android:id="@+id/pokemonDetailFragment"
+        android:name="com.wachi.ohmypokemon.ui.pokemondetail.detail.PokemonDetailFragment"
+        android:label="fragment_pokemon_detail"
+        tools:layout="@layout/fragment_pokemon_detail" >
+        <argument
+            android:name="POKEMON_ID"
+            app:argType="string" />
+    </fragment>
+</navigation>
