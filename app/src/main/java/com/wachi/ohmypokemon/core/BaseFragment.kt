@@ -15,4 +15,8 @@ open class BaseFragment: Fragment() {
                 dialog.loading(it)
             })
         }
+
+    protected fun openExternalBrowser(url: String) {
+        (activity as? BaseActivity)?.openExternalBrowser(url)
+    }
 }
