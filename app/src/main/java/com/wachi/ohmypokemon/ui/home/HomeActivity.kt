@@ -10,6 +10,8 @@ class HomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        setTitle(getString(R.string.home_title))
+        hideBackButton()
         viewPagerHome.adapter = HomeViewPagerAdapter(this)
         btnFeed.setOnClickListener { viewPagerHome.currentItem = POKEMON_NEWS_FEED_PAGE_INDEX }
         btnPokemonList.setOnClickListener { viewPagerHome.currentItem = POKEMON_LIST_PAGE_INDEX }

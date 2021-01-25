@@ -30,6 +30,7 @@ class PokemonDetailFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observe()
+        setTitle(getString(R.string.pokemon_detail_title))
         viewModel.getDetail(args.POKEMONID)
     }
 

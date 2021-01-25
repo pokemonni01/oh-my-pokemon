@@ -16,6 +16,18 @@ open class BaseFragment: Fragment() {
             })
         }
 
+    protected fun showBackButton() {
+        (activity as? BaseActivity)?.showBackButton()
+    }
+
+    protected fun hideBackButton() {
+        (activity as? BaseActivity)?.hideBackButton()
+    }
+
+    protected fun setTitle(text: String) {
+        (activity as? BaseActivity)?.setTitle(text)
+    }
+
     protected fun openExternalBrowser(url: String) {
         (activity as? BaseActivity)?.openExternalBrowser(url)
     }

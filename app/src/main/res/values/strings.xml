@@ -6,6 +6,9 @@
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_ok">Ok</string>
 
+    <string name="home_title">Oh My Pokemon</string>
+
+    <string name="pokemon_detail_title">Pokemon Detail</string>
     <string name="pokemon_detail_detail_name_label">Name: </string>
     <string name="pokemon_detail_detail_weight_label">Weight: </string>
     <string name="pokemon_detail_detail_height_label">Height: </string>
