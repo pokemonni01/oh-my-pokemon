@@ -1,10 +1,7 @@
 package com.wachi.ohmypokemon
 
 import android.app.Application
-import com.wachi.ohmypokemon.di.coreModule
-import com.wachi.ohmypokemon.di.homeModule
-import com.wachi.ohmypokemon.di.repositoryModule
-import com.wachi.ohmypokemon.di.useCaseModule
+import com.wachi.ohmypokemon.di.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -22,7 +19,8 @@ class MyApplication: Application() {
                 coreModule,
                 repositoryModule,
                 useCaseModule,
-                homeModule
+                homeModule,
+                pokemonDetailModule
             )
             modules(modules)
         }

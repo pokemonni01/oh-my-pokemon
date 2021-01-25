@@ -5,4 +5,8 @@
     <string name="home_pokemon_button">Setting</string>
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_ok">Ok</string>
+
+    <string name="pokemon_detail_detail_name_label">Name: </string>
+    <string name="pokemon_detail_detail_weight_label">Weight: </string>
+    <string name="pokemon_detail_detail_height_label">Height: </string>
 </resources>
