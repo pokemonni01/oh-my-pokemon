@@ -11,6 +11,7 @@ import com.wachi.ohmypokemon.utils.loadImage
 import kotlinx.android.synthetic.main.fragment_pokemon_detail.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.viewmodel.ext.android.viewModel
+import java.util.*
 
 @ExperimentalCoroutinesApi
 class PokemonDetailFragment : BaseFragment() {
@@ -36,6 +37,9 @@ class PokemonDetailFragment : BaseFragment() {
         viewModel.observeLoading()
         viewModel.pokemonDetail.observe(viewLifecycleOwner, {
             ivPokemonImage.loadImage(it.image ?: "")
+            tvPokemonDetailName.text = it.name?.capitalize(Locale.US)
+            tvPokemonDetailWeight.text = it.weight
+            tvPokemonDetailHeight.text = it.height
         })
     }
 }

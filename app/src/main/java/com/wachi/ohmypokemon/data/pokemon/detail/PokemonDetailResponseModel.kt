@@ -12,5 +12,8 @@ data class PokemonDetailResponseModel(
 
 fun PokemonDetailResponseModel.mapToDomain(imageUrl: String) = PokemonDetail(
     id = id,
-    image = imageUrl
+    image = imageUrl,
+    name = name,
+    weight = weight,
+    height = height
 )
